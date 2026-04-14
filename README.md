@@ -6,9 +6,9 @@ DSA210 Term Project
 
 ## Overview
 
-This project analyzes how food delivery demand changes over time and how it is affected by weather conditions.
+This project analyzes how food delivery demand changes over time and how it is influenced by weather conditions.
 
-The main objective is to understand whether variables such as temperature, precipitation, hour of the day, and day of the week have a meaningful impact on order volume.
+The main objective is to examine whether variables such as temperature, precipitation, hour of the day, and day of the week have a measurable impact on order volume.
 
 The project is structured in two main parts:
 - Exploratory Data Analysis (EDA)
@@ -18,12 +18,14 @@ The project is structured in two main parts:
 
 ## Motivation
 
-Food delivery demand is not constant. It changes depending on:
-- Time (hour of the day)
-- Day type (weekday vs weekend)
-- Environmental factors (weather conditions)
+Food delivery demand is not constant and varies depending on several factors.
 
-Understanding these patterns can help better interpret customer behavior and demand fluctuations.
+In particular, demand is expected to change based on:
+- Time of the day  
+- Day type (weekday vs weekend)  
+- Environmental conditions such as weather  
+
+Understanding these patterns helps provide insights into customer behavior and demand fluctuations.
 
 ---
 
@@ -31,7 +33,8 @@ Understanding these patterns can help better interpret customer behavior and dem
 
 ### Order Dataset
 - Source: Kaggle  
-- Contains timestamps of food delivery orders  
+- Contains approximately 21,000 records :contentReference[oaicite:0]{index=0}  
+- Includes order timestamps and related features  
 - Used to calculate hourly order counts  
 
 ### Weather Dataset
@@ -39,16 +42,26 @@ Understanding these patterns can help better interpret customer behavior and dem
 - Includes:
   - Temperature (°C)
   - Precipitation  
-- Collected at hourly level  
+- Collected at hourly level and aligned with order timestamps  
+
+---
+
+## Methodology
+
+### Data Preparation
+- Converted timestamps into datetime format  
+- Rounded both datasets to hourly level  
+- Aggregated order data into hourly order counts  
+- Merged datasets based on the datetime column  
 
 ---
 
 ## Exploratory Data Analysis (EDA)
 
-EDA was performed to understand patterns before applying statistical tests.
+EDA was conducted to explore patterns before applying statistical methods.
 
 ### Analyses Conducted:
-- General overview (shape, missing values, summary statistics)  
+- General overview (dataset size, missing values, summary statistics)  
 - Time-based patterns:
   - Orders by hour  
   - Orders by day of the week  
@@ -59,7 +72,7 @@ EDA was performed to understand patterns before applying statistical tests.
 ### Observations:
 - Order demand shows clear daily patterns  
 - Demand varies across days of the week  
-- Weather effects are less visually strong compared to time-based patterns  
+- Weather effects are less visually prominent compared to time-based patterns  
 
 ---
 
@@ -83,7 +96,7 @@ Statistical tests were conducted to evaluate the relationships observed in the E
 - Time-related variables (hour and day type) have a strong impact on demand  
 - Temperature shows a weak or moderate relationship with order volume  
 - Precipitation does not show strong statistical significance  
-- Overall, demand is more influenced by time than weather conditions  
+- Overall, demand appears to be more influenced by time than weather conditions  
 
 ---
 
@@ -99,7 +112,7 @@ Statistical tests were conducted to evaluate the relationships observed in the E
 ## AI Usage
 
 AI tools were used for:
-- Code structuring and debugging  
+- Structuring and debugging code  
 - Improving clarity of explanations  
 
-All analysis and interpretations were developed independently.
+All analysis steps, decisions, and interpretations were carried out independently.
